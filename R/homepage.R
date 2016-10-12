@@ -14,4 +14,6 @@
 generate_homepage <- function() {
   head <- make_head()
   modals <- make_modals()
+  navbar <- make_navbar()
+  jumbo <- make_jumbo()
 }

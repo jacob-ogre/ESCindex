@@ -3,6 +3,7 @@
 export(generate_homepage)
 export(get_GSheet)
 export(make_head)
+export(make_jumbotron)
 export(make_modals)
 export(make_navbar)
 import(htmltools)
