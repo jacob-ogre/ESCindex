@@ -12,7 +12,12 @@ make_jumbotron <- function() {
     tags$h1(
       jum$Title,
       tags$br(),
-      HTML(jum$Content)
+      tags$small(
+        tags$div(
+          style = "padding-top: 10px",
+          HTML(jum$Content)
+        )
+      )
     )
   )
 }

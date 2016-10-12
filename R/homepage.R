@@ -15,5 +15,25 @@ generate_homepage <- function() {
   head <- make_head()
   modals <- make_modals()
   navbar <- make_navbar()
-  jumbo <- make_jumbo()
+  jumbo <- make_jumbotron()
+
+  page <- tags$html(
+    head,
+    tags$body(
+      modals,
+      navbar,
+      tags$br(),
+      tags$br(),
+      tags$br(),
+      tags$div(
+        style = "width:90%; padding-left:10%",
+        tags$div(
+          class = "col-md-12",
+          br(),
+          jumbo
+        )
+      )
+    )
+  )
+  doRenderTags(page)
 }

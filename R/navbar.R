@@ -9,8 +9,6 @@
 make_navbar <- function() {
   nav_dat <- filter(index_data, Type == "nav_element")
   drp_dat <- filter(index_data, Type == "nav_element_drop")
-  print(dim(nav_dat))
-  print(dim(drp_dat))
 
   make_li_tags <- function(dat) {
     res <- list()
