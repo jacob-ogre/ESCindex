@@ -22,6 +22,19 @@ make_navbar <- function() {
     return(res)
   }
 
+  make_drop_tags <- function(dat) {
+    res <- list()
+    for(i in 1:length(dat$Type)) {
+      res[[i]] <- tags$li(
+        tags$a(href = "#",
+               `data-toggle` = "modal",
+               `data-target` = dat[i, ]$Link,
+               dat[i, ]$Title)
+      )
+    }
+    return(res)
+  }
+
   tags$nav(
     class = "navbar navbar-default navbar-fixed-top",
     tags$div(class = "container-fluid",
@@ -65,7 +78,7 @@ make_navbar <- function() {
             ),
             tags$ul(
               class = "dropdown-menu",
-              make_li_tags(drp_dat)
+              make_drop_tags(drp_dat)
             )
           )
         )
