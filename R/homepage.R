@@ -16,6 +16,9 @@ generate_homepage <- function() {
   modals <- make_modals()
   navbar <- make_navbar()
   jumbo <- make_jumbotron()
+  sidebar <- make_sidebar()
+  app_box <- make_section_box("app_box")
+  apps <- make_apps()
 
   page <- tags$html(
     head,
@@ -24,13 +27,24 @@ generate_homepage <- function() {
       navbar,
       tags$br(),
       tags$br(),
-      tags$br(),
       tags$div(
         style = "width:90%; padding-left:10%",
         tags$div(
           class = "col-md-12",
           br(),
           jumbo
+        ),
+        sidebar,
+        tags$div(
+          class = "col-md-9",
+          tags$div(
+            class = "row",
+            tags$div(
+              class = "col-md-12",
+              app_box
+            )
+          ),
+          apps
         )
       )
     )
