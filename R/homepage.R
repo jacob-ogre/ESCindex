@@ -21,6 +21,8 @@ generate_homepage <- function() {
   wp_box <- make_section_box("wp_box")
   apps <- make_app_boxes()
   wps <- make_wp_boxes()
+  anno_box <- make_section_box("annot_box")
+  annots <- make_annot_boxes()
 
   page <- tags$html(
     head,
@@ -54,7 +56,15 @@ generate_homepage <- function() {
               wp_box
             )
           ),
-          wps
+          wps,
+          tags$div(
+            class = "row",
+            tags$div(
+              class = "col-md-12",
+              anno_box
+            )
+          ),
+          annots
         )
       )
     )

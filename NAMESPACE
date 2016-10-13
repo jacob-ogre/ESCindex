@@ -2,6 +2,7 @@
 
 export(generate_homepage)
 export(get_GSheet)
+export(make_annot_boxes)
 export(make_app_boxes)
 export(make_head)
 export(make_jumbotron)
