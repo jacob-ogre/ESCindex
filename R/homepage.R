@@ -18,7 +18,9 @@ generate_homepage <- function() {
   jumbo <- make_jumbotron()
   sidebar <- make_sidebar()
   app_box <- make_section_box("app_box")
-  apps <- make_apps()
+  wp_box <- make_section_box("wp_box")
+  apps <- make_app_boxes()
+  wps <- make_wp_boxes()
 
   page <- tags$html(
     head,
@@ -44,7 +46,15 @@ generate_homepage <- function() {
               app_box
             )
           ),
-          apps
+          apps,
+          tags$div(
+            class = "row",
+            tags$div(
+              class = "col-md-12",
+              wp_box
+            )
+          ),
+          wps
         )
       )
     )
