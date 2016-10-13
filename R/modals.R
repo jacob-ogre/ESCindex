@@ -45,6 +45,6 @@ make_modals <- function() {
   mods <- lapply(1:length(mod_dat$Type),
                  base_mod,
                  dat = mod_dat)
-  modals <- tags$div(mods)
-  return(modals)
+  # modals <- tags$div(mods)
+  return(mods)
 }

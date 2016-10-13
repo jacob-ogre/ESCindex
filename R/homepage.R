@@ -66,7 +66,8 @@ generate_homepage <- function() {
           ),
           annots
         )
-      )
+      ),
+      add_javascript()
     )
   )
   doRenderTags(page)
