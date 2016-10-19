@@ -21,6 +21,8 @@ generate_homepage <- function() {
   wp_box <- make_section_box("wp_box")
   apps <- make_app_boxes()
   wps <- make_wp_boxes()
+  mu_box <- make_section_box("micro_box")
+  muapps <- make_muapp_boxes()
   anno_box <- make_section_box("annot_box")
   annots <- make_annot_boxes()
 
@@ -57,6 +59,14 @@ generate_homepage <- function() {
             )
           ),
           wps,
+          tags$div(
+            class = "row",
+            tags$div(
+              class = "col-md-12",
+              mu_box
+            )
+          ),
+          muapps,
           tags$div(
             class = "row",
             tags$div(

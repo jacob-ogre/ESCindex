@@ -1,12 +1,13 @@
 # BSD_2_clause
 
-#' Create bootstrap boxes for documents for Hypothes.is annotation
+#' Create bootstrap boxes for Shiny microapps
 #'
+#' @return what is returned
 #' @import htmltools
 #' @importFrom dplyr filter
 #' @export
-make_annot_boxes <- function() {
-  app_dat <- filter(index_data, Type == "poldoc")
+make_muapp_boxes <- function() {
+  app_dat <- filter(index_data, Type == "muapp")
   n_apps <- length(app_dat$Type)
   n_rows <- n_apps %/% 3
   n_rows <- ifelse(n_apps %% 3 != 0,
@@ -29,16 +30,15 @@ make_annot_boxes <- function() {
             href = dat$Link,
             target = "_blank",
             tags$div(
-              class = "panel panel-info",
+              class = "panel panel-warning",
               tags$div(
                 class = "panel-heading",
                 dat$Title
               ),
               tags$div(
                 class = "panel-body",
-                tags$p(
-                  dat$Content
-                ),
+                style = "color:#ca7d02",
+                tags$p(dat$Content),
                 HTML(restrict)
               )
             )

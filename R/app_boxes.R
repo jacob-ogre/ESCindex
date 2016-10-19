@@ -46,10 +46,15 @@ make_app_boxes <- function() {
         cur_set_apps[[col]] <- cur
       }
     }
-    res[[row]] <- tags$div(
-      class = "row",
-      cur_set_apps
+    try_res <- try(
+      res[[row]] <- tags$div(
+        class = "row",
+        cur_set_apps
+      )
     )
+    if(class(try_res) == "try-error") {
+      stop("App boxes failed.")
+    }
   }
   return(res)
 }
