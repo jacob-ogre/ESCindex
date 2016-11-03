@@ -8,7 +8,8 @@
 make_section_box <- function(sect) {
   subd <- filter(index_data, Name == sect)
   box <- tags$div(
-    class = "panel panel-default",
+    # class = "panel panel-default",
+    id = "plain-panel",
     tags$div(
       class = "panel-body",
       tags$h4(
