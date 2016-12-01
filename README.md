@@ -22,7 +22,7 @@ Next, load the package and fetch the updated GSheet using:
 And then generate the homepage file, index.html:
 
     idx <- generate_homepage()
-    writeLines(idx, con = "index.html")
+    writeLines(idx, con = "../index.html")
     
 Open the new index.html to check that it worked as intended. If everything is OK,
 on the development server, `mv` the current index.html to index.html.bak, then
