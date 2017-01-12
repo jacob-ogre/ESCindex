@@ -5,8 +5,8 @@
 #' @return A data_frame of the index.html data
 #' @importFrom googlesheets gs_title gs_read
 #' @export
-get_GSheet <- function() {
-  idx_pg <- gs_title("dev_index")
+get_GSheet <- function(title = "dev_index") {
+  idx_pg <- gs_title(title)
   idx_dat <- gs_read(idx_pg)
   return(idx_dat)
 }
