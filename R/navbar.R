@@ -55,7 +55,7 @@ make_navbar <- function() {
         tags$a(
           class = "navbar-brand",
           href = "#",
-          "ESC Dev"
+          "CCI dev"
         )
       ),
       tags$div(
