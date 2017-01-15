@@ -21,7 +21,9 @@ make_app_boxes <- function() {
       app <- col + (3 * (row - 1))
       if(app <= n_apps) {
         dat <- app_dat[app, ]
-        restrict <- ifelse(grepl(dat$Link, pattern = "shiny/closed", fixed = TRUE),
+        restrict <- ifelse(grepl(dat$Link,
+                                 pattern = "shiny/closed|esadocs",
+                                 fixed = FALSE),
                            '<span class="label label-danger">Restricted</span>',
                            '')
         cur <- tags$div(
